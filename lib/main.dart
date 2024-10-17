@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'page2.dart'; // Pastikan Page2 sudah didefinisikan
+import 'page2.dart'; // Pastikan file page2.dart ada di direktori yang benar
+import 'Login.dart'; // Pastikan file Login.dart ada di direktori yang benar
+
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
-  home: ProfilePage(),
-));
+  home: LoginPage(),
+)); 
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -57,10 +59,10 @@ class ProfilePage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 12.0),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Page2()),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => Page2()),
+                    // );
                   },
                   child: Text(
                     'See More',

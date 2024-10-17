@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Page2 extends StatelessWidget {
-  const Page2({Key? key}) : super(key: key);
+  final String school;
+  final String name;
+  final String role;
+  final String description;
+
+  const Page2({
+    Key? key,
+    required this.school,
+    required this.name,
+    required this.role,
+    required this.description,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +20,7 @@ class Page2 extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Detail Page'),
         centerTitle: true,
-        backgroundColor: const Color(0xFF1B1B1B), // Dark theme app bar color
+        backgroundColor: const Color(0xFF1B1B1B),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -34,70 +45,109 @@ class Page2 extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               margin: const EdgeInsets.symmetric(vertical: 5.0),
               decoration: BoxDecoration(
-                color: Colors.grey[800], // Dark card color
+                color: Colors.grey[800],
                 borderRadius: BorderRadius.circular(15.0),
               ),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    'Nama:',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white), // Text color white
+                  const Text(
+                    'Name',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Text(
-                    'seorang pelajar yang hidup bersama ibu dan kakak nya, ayah nya meninggal pada saat dia duduk di bangku sd, kehidupan yang begitu keras menempa diirinya menjadi pribadi yang lebih baik',
-                    style: TextStyle(fontSize: 18, color: Colors.white70), // Lighter text color
+                    name, // Menampilkan deskripsi yang diisi di login page
+                    style: const TextStyle(fontSize: 18, color: Colors.white70),
                   ),
                 ],
               ),
             ),
 
+
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20.0),
+              margin: const EdgeInsets.symmetric(vertical: 5.0),
+              decoration: BoxDecoration(
+                color: Colors.grey[800],
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const Text(
+                    'role',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    role, // Menampilkan deskripsi yang diisi di login page
+                    style: const TextStyle(fontSize: 18, color: Colors.white70),
+                  ),
+                ],
+              ),
+            ),
             // Container Pekerjaan
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20.0),
               margin: const EdgeInsets.symmetric(vertical: 5.0),
               decoration: BoxDecoration(
-                color: Colors.grey[800], // Dark card color
+                color: Colors.grey[800],
                 borderRadius: BorderRadius.circular(15.0),
               ),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    'Pekerjaan:',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                  const Text(
+                    'school',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Text(
-                    'Siswa SMK Wikrama Bogor',
-                    style: TextStyle(fontSize: 18, color: Colors.white70),
+                    ' $school', // Menampilkan nama sekolah yang diisi
+                    style: const TextStyle(fontSize: 18, color: Colors.white70),
                   ),
                 ],
               ),
             ),
 
-            // Container Hobi
+            // Container Nama
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20.0),
               margin: const EdgeInsets.symmetric(vertical: 5.0),
               decoration: BoxDecoration(
-                color: Colors.grey[800], // Dark card color
+                color: Colors.grey[800],
                 borderRadius: BorderRadius.circular(15.0),
               ),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    'Hobi:',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                  const Text(
+                    'About Me',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Text(
-                    'Membuat Aplikasi Mobile',
-                    style: TextStyle(fontSize: 18, color: Colors.white70),
+                    description, // Menampilkan nama yang diisi di login page
+                    style: const TextStyle(fontSize: 18, color: Colors.white70),
                   ),
                 ],
               ),
@@ -105,7 +155,7 @@ class Page2 extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: const Color(0xFF121212), // Dark theme background color
+      backgroundColor: const Color(0xFF121212),
     );
   }
 }
